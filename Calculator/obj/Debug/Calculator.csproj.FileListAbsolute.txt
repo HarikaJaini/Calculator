@@ -1,0 +1,7 @@
+c:\documents and settings\administrator\my documents\visual studio 2010\Projects\Calculator\Calculator\bin\Calculator.dll
+c:\documents and settings\administrator\my documents\visual studio 2010\Projects\Calculator\Calculator\bin\Calculator.pdb
+c:\documents and settings\administrator\my documents\visual studio 2010\Projects\Calculator\Calculator\bin\EntityFramework.dll
+c:\documents and settings\administrator\my documents\visual studio 2010\Projects\Calculator\Calculator\bin\EntityFramework.xml
+c:\documents and settings\administrator\my documents\visual studio 2010\Projects\Calculator\Calculator\obj\Debug\ResolveAssemblyReference.cache
+c:\documents and settings\administrator\my documents\visual studio 2010\Projects\Calculator\Calculator\obj\Debug\Calculator.dll
+c:\documents and settings\administrator\my documents\visual studio 2010\Projects\Calculator\Calculator\obj\Debug\Calculator.pdb

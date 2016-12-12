@@ -1,0 +1,116 @@
+﻿<script type="text/javascript">
+    $(function () {
+        $("#btnOne").click(function () {
+            updateResult("1");
+        });
+        $("#btnTwo").click(function () {
+            updateResult("2");
+        });
+        $("#btnThree").click(function () {
+            updateResult("3");
+        });
+        $("#btnFour").click(function () {
+            updateResult("4");
+        });
+        $("#btnFive").click(function () {
+            updateResult("5");
+        });
+        $("#btnSix").click(function () {
+            updateResult("6");
+        });
+        $("#btnSeven").click(function () {
+            updateResult("7");
+        });
+        $("#btnEight").click(function () {
+            updateResult("8");
+        });
+        $("#btnNine").click(function () {
+            updateResult("9");
+        });
+        $("#btnZero").click(function () {
+            updateResult("0");
+        });
+        $("#btnPlusMinus").click(function () {
+            var x = $("#lblResult").val();
+            $("#lblResult").val(-x);
+        });
+        $("#btnDot").click(function () {
+            var x = $("#lblResult").val();
+            if (x.indexOf(".") == -1) {
+                $("#lblResult").val(x + ".");
+            }
+        });
+        $("#btnPercentage").click(function () {
+            var x = $("#lblResult").val();
+            $("#lblResult").val(x / 100);
+            $("#hdnReset").val("true");
+        });
+        $("#btnAC").click(function () {
+            $("#lblResult").val("0");
+        });
+
+    });
+
+    function updateResult(num) {
+        var x = $("#lblResult").val();
+        var reset = $("#hdnReset").val();
+        if (x == "0" ||reset =="true") {
+            $("#lblResult").val(num);
+            $("#hdnReset").val(false);
+        }
+        else {
+            $("#lblResult").val(x + num);
+        }
+    }
+
+</script>
+
+<center>
+<div>
+    @using (@Html.BeginForm("calculate", "Calculator"))
+    {
+        <table>
+            <tr>
+                <td colspan="4" align="center"><h2>Calculator</h2></td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <input type="label" id="lblResult" name="inputValue" value="@ViewBag.Result" style="text-align:right; width:95%" />
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" id="btnAC" name="operation" value="AC" style="width:40px; height:25px; background-color:#D3D3D3" /></td>
+                <td><input type="button" id="btnPlusMinus" value="+/-" style="width:40px; height:25px; background-color:#D3D3D3" /> </td>
+                <td><input type="button" id="btnPercentage" value="%" style="width:40px; height:25px; background-color:#D3D3D3" /> </td>
+                <td><input type="submit" id="btnDivide" name="operation" value="/" style="width:40px; height:25px; background-color:#D3D3D3" /> </td>
+            </tr>
+            <tr>
+                <td><input type="button" id="btnSeven" value="7" style="width:40px; height:25px"/></td>
+                <td><input type="button" id="btnEight" value="8" style="width:40px; height:25px"/> </td>
+                <td><input type="button" id="btnNine" value="9" style="width:40px; height:25px"/> </td>
+                <td><input type="submit" id="btnMultiply" name="operation" value="*" style="width:40px; height:25px; background-color:#FF8C00"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" id="btnFour" value="4" style="width:40px; height:25px"/></td>
+                <td><input type="button" id="btnFive" value="5" style="width:40px; height:25px"/> </td>
+                <td><input type="button" id="btnSix" value="6" style="width:40px; height:25px"/> </td>
+                <td><input type="submit" id="btnMinus" name="operation" value="-" style="width:40px; height:25px; background-color:#FF8C00"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" id="btnOne" value="1" style="width:40px; height:25px"/></td>
+                <td><input type="button" id="btnTwo" value="2" style="width:40px; height:25px"/> </td>
+                <td><input type="button" id="btnThree" value="3" style="width:40px; height:25px"/> </td>
+                <td><input type="submit" id="btnPlus" name="operation" value="+" style="width:40px; height:25px; background-color:#FF8C00"/> </td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" id="btnZero" value="0" style="width:85px; height:25px"/></td>
+                <td><input type="button" id="btnDot" value="." style="width:40px; height:25px"/> </td>
+                <td><input type="submit" id="btnEquals" name="operation" value="=" style="width:40px; height:25px; background-color:#FF8C00"/> </td>
+            </tr>
+        </table>
+        <div>
+            <input type="hidden" id="hdnReset" name="reset" value="@ViewBag.Reset" />
+        </div>
+    }
+</div>
+</center>
